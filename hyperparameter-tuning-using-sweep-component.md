@@ -23,6 +23,8 @@ or you can use a [notebook widget](https://docs.microsoft.com/en-us/azure/machin
 5. In the **Experiments** tab, if you submitted a pipeline run, select the run and navigate to the **Steps** tab. 
 6. Navigate to the **Child runs** tab to view each hyperdrive child run. This visualization tracks the metrics logged for each hyperdrive child run over 
   the duration of hyperparameter tuning. Each line represents a child run, and each point measures the primary metric value at that iteration of runtime. 
+  ![](webxtsweep.gif)
+  
   :::image type="content" source="media/webxtsweep.gif" alt-text="Screenshot: hyperdrive sweep":::
 
 ## Resources 
