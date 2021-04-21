@@ -25,8 +25,6 @@ or you can use a [notebook widget](https://docs.microsoft.com/en-us/azure/machin
   the duration of hyperparameter tuning. Each line represents a child run, and each point measures the primary metric value at that iteration of runtime. 
   ![](webxtsweep.gif)
   
-  :::image type="content" source="media/webxtsweep.gif" alt-text="Screenshot: hyperdrive sweep":::
-
 ## Resources 
 
 1. [How to tune Hyperparameters](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters)
