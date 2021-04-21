@@ -11,8 +11,8 @@ This document provides an overview of how to use hyperparameter tuning using swe
 to learn how to use Sweep component in AML Pipeline. The notebook covers the following:
       * Define the parameter search space. In this example, we are tuning on **batch_size_per_gpu** and **learning_rate**. 
       * Specify a primary metric to optimize. In this example, we are optimizing the metric **onedcg_3**. 
-      * Specify early termination policy for low-performing runs? (confirm with Aashna if her notebook covers this)
-      * Create and assign resources?  (confirm with Aashna if her notebook covers this)
+      * Specify early termination policy for low-performing runs
+      * Create and assign resources
       * Launch an experiment with the defined configuration
       * Visualize the training runs
       * Select the best configuration for your model
