@@ -8,7 +8,7 @@ This document provides an overview of how to use hyperparameter tuning using swe
 ## Steps 
 1. Use this [guide](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources. 
 2. Use this [notebook](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/master/azure-ml-components/samples/how-to-use-sweep-component-for-hyperparameter-tuning.ipynb) 
-to walkthrough how to use Sweep component in AML Pipeline. The notebook covers the following:
+to learn how to use Sweep component in AML Pipeline. The notebook covers the following:
       * Define the parameter search space. In this example, we are tuning on **batch_size_per_gpu** and **learning_rate**. 
       * Specify a primary metric to optimize. In this example, we are optimizing the metric **onedcg_3**. 
       * Specify early termination policy for low-performing runs? (confirm with Aashna if her notebook covers this)
