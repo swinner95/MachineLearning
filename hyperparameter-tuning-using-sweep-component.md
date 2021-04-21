@@ -20,7 +20,7 @@ to learn how to use Sweep component in AML Pipeline. The notebook covers the fol
 #### Visualize hyperparameter tuning runs
 4. After you submit your training job, you can visualize your hyperparameter tuning runs in the [Azure Machine Learning studio UI](ml.azure.com),
 or you can use a [notebook widget](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters#notebook-widget).
-5. In the **Experiments** tab, if you submitted a pipeline run, select the run and navigate to the **Steps** tab. 
+5. In the **Experiments** tab, if you submitted a pipeline run, select the run and then select the **Steps** tab. 
 6. Navigate to the **Child runs** tab to view each hyperdrive child run. This visualization tracks the metrics logged for each hyperdrive child run over 
   the duration of hyperparameter tuning. Each line represents a child run, and each point measures the primary metric value at that iteration of runtime. 
   ![](webxtsweep.gif)
