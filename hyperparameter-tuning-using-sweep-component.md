@@ -6,9 +6,12 @@ This document provides an overview of how to use hyperparameter tuning using swe
 
 
 ## Steps 
-1. Use this [guide](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources. 
-2. Use this [notebook](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/master/azure-ml-components/samples/how-to-use-sweep-component-for-hyperparameter-tuning.ipynb) 
-to learn how to use Sweep component in AML Pipeline. The notebook covers the following:
+1. Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and
+to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a
+pipeline sweep job. 
+
+The [sweep.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Faml_pipeline%2Fconfigs%2Fpipeline_params%2Fsweep.json) file outlines how you can:
+
       * Define the parameter search space. In this example, we are tuning on **batch_size_per_gpu** and **learning_rate**. 
       * Specify a primary metric to optimize. In this example, we are optimizing the metric **onedcg_3**. 
       * Specify early termination policy for low-performing runs
@@ -29,5 +32,6 @@ or you can use a [notebook widget](https://docs.microsoft.com/en-us/azure/machin
 
 1. [How to tune Hyperparameters](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters)
 2. [Hyperdrive Package](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py)
-3. [hyperparameter-tune-and-warm-start-with-tensorflow.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/tensorflow/hyperparameter-tune-and-warm-start-with-tensorflow/hyperparameter-tune-and-warm-start-with-tensorflow.ipynb)
-4. [Sweep Component](https://componentsdk.azurewebsites.net/components/sweep_component.html)
+3. [How to use sweep component for hyperparameter tuning](https://github.com/Azure/DesignerPrivatePreviewFeatures/blob/master/azure-ml-components/samples/how-to-use-sweep-component-for-hyperparameter-tuning.ipynb) 
+4. [hyperparameter-tune-and-warm-start-with-tensorflow.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/tensorflow/hyperparameter-tune-and-warm-start-with-tensorflow/hyperparameter-tune-and-warm-start-with-tensorflow.ipynb)
+5. [Sweep Component](https://componentsdk.azurewebsites.net/components/sweep_component.html)
