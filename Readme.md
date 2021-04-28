@@ -32,16 +32,21 @@ Start exploring deeprank/pagerec.ipynb Jupyter Notebook to submit AML pipelines.
 In Aether, by replacing your ITP training subgraph with only one Deeprank AML ITP training module, you can continue to submit to ITP cluster and/or AML compute
 and get all the added benefits of AML. 
 
+- The Deeprank AML ITP module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML.
+- You can edit the **overrideparams** parameter to overwride any parameters instead of editing these parameters in the config file. You can add parameters
+as dictionary values for example {batch_size: 10}. 
+- You can also add run tags in the **tags** parameter.  
+
+Current Training Module submitted to ITP 
+ ![](old_training_module.png)
+
+
 Benefits:
 *	Improved experiment tracking 
 *	Automated hyperparameter tuning
 *	Increased resource utilization (AML Compute + existing ITP compute)
 *	Replace long commands with configs and overridable params
 
-* The Deeprank AML ITP module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML.
-* You can edit the **overrideparams** parameter to overwride any parameters instead of editing these parameters in the config file. You can add parameters
-as dictionary values for example {batch_size: 10}. 
-* You can also add run tags in the **tags** parameter.  
 
 
 #### Inferencing 
