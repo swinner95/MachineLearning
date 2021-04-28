@@ -25,16 +25,20 @@ Start exploring this [Notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git
 In Aether, by replacing your ITP training subgraph with only one Deeprank AML ITP training module, you can continue to submit to ITP cluster and/or AML compute
 and get all the added benefits of AML. 
 
+**Current Training Module submitted to ITP**
+
+![](trainingimage1.GIF)
+
+
+**AML Deeprank Training Module**
 - The Deeprank AML ITP module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML.
 - You can edit the **overrideparams** parameter to overwride any parameters instead of editing these parameters in the config file. You can add parameters
 as dictionary values for example {batch_size: 10}. 
 - You can also add run tags in the **tags** parameter.  
 
-Current Training Module submitted to ITP 
+![](trainingimage2.GIF)
 
-![](trainingimage1.gif)
-
-Benefits:
+**Benefits:**
 *	Improved experiment tracking 
 *	Automated hyperparameter tuning
 *	Increased resource utilization (AML Compute + existing ITP compute)
@@ -43,15 +47,20 @@ Benefits:
 ### Inferencing 
 In Aether, by replacing your Inferencing subgraph with only one Deeprank AML ITP inferencing module, you can continue to submit to ITP cluster and/or AML compute
 and get all the added benefits of AML. 
+![](inferenceimage1.GIF)
 
+**AML Deeprank PRS Module**
 - The Deeprank AML PRS module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML.
 - You can edit the **overrideparams** parameter to overwride any parameters instead of editing these parameters in the config file. You can add parameters
 as dictionary values for example {batch_size: 10}. 
 - You can also add run tags in the **tags** parameter.  
+
+![](inferenceimage2.GIF)
+
+**Configurable Parallelization**
 - There is also configurable parallelization where you can specify the number of **numNodes** and **numGPUs** which can save 100x graph complexity. 
-
-
-Benefits:
+![](configue.GIF)
+**Benefits:**
 *	Increased resource utilization (AML Compute+existing ITP)
 *	Automatic retries and non-redundant code/modules for batch inferencing
 *	Aether graph for inferencing simplified by 100x
