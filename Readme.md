@@ -38,7 +38,8 @@ as dictionary values for example {batch_size: 10}.
 - You can also add run tags in the **tags** parameter.  
 
 Current Training Module submitted to ITP 
- ![](old_training_module.png)
+
+ ![](image1.png)
 
 
 Benefits:
