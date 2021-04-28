@@ -54,7 +54,7 @@ as dictionary values for example {batch_size: 10}.
 Benefits:
 *	Increased resource utilization (AML Compute+existing ITP)
 *	Automatic retries and non-redundant code/modules for batch inferencing
-*	AEther graph for inferencing simplified by 100x
+*	Aether graph for inferencing simplified by 100x
 
 
 ## AML Scenarios Supported 
