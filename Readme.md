@@ -12,9 +12,9 @@
      3. Relevance ADLS group [relevance-c09_RWX](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/GroupDetailsMenuBlade/Overview/groupId/eb2a3428-71c0-4751-9194-715007f36d74)
        - (Skip if you're already a part of aml-ds@microsoft.com or relevance-users@microsoft.com)
 
-## Two approaches
+## Two approaches to submit jobs to AML
 1. Using a Jupyter notebook
-2. Using Aether 
+2. Using Aether module
 
 
 ### Using the Jupyter notebook to submit runs to AML
