@@ -21,7 +21,7 @@
 Start exploring this [Notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&version=GBaagarg%2Franklm&_a=preview&anchor=getting-started) to submit AML pipelines.
 
 ## Using Aether to submit runs to AML/ITP 
-#### Training
+### Training
 In Aether, by replacing your ITP training subgraph with only one Deeprank AML ITP training module, you can continue to submit to ITP cluster and/or AML compute
 and get all the added benefits of AML. 
 
@@ -40,7 +40,16 @@ Benefits:
 *	Increased resource utilization (AML Compute + existing ITP compute)
 *	Replace long commands with configs and overridable params
 
-#### Inferencing 
+### Inferencing 
+In Aether, by replacing your Inferencing subgraph with only one Deeprank AML ITP inferencing module, you can continue to submit to ITP cluster and/or AML compute
+and get all the added benefits of AML. 
+
+- The Deeprank AML PRS module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML.
+- You can edit the **overrideparams** parameter to overwride any parameters instead of editing these parameters in the config file. You can add parameters
+as dictionary values for example {batch_size: 10}. 
+- You can also add run tags in the **tags** parameter.  
+- There is also configurable parallelization where you can specify the number of **numNodes** and **numGPUs** which can save 100x graph complexity. 
+
 
 Benefits:
 *	Increased resource utilization (AML Compute+existing ITP)
