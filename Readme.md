@@ -13,13 +13,15 @@
 
 ## What different AML scenarios are supported, how to switch between AML and ITP
 
-## AML Scenerarions Supported for submission on AML and ITP
-- Scope
+## AML Scenerarions Supported 
+
+* Scope
 * Regular training
 * Distributed training
+* PRS 
 * Hyperparameter optimization
 
-  Hyperparameter tuning, also called hyperparameter optimization, is the process of finding the configuration of hyperparameters that results in the best performance. The process is typically computationally expensive and manual. Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a pipeline sweep job. See [here](https://componentsdk.azurewebsites.net/components/sweep_component.html) for more details on the Sweep component. 
+Hyperparameter tuning, also called hyperparameter optimization, is the process of finding the configuration of hyperparameters that results in the best performance. The process is typically computationally expensive and manual. Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a pipeline sweep job. See [here](https://componentsdk.azurewebsites.net/components/sweep_component.html) for more details on the Sweep component. 
 
 Use the configuration file [sweep.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Faml_pipeline%2Fconfigs%2Fpipeline_params%2Fsweep.json) to edit the parameters and settings for your job. This file outlines how you can do the following tasks.  
 
@@ -40,12 +42,10 @@ or you can use a [notebook widget](https://docs.microsoft.com/en-us/azure/machin
   ![](webxtsweep.gif)
 
 
-### PRS
-
 ### Using the Jupyter notebook to submit runs to AML
-Start exploring deeprank/pagerec.ipynb Jupyter Notebook to submit AML pipelines.
+Start exploring this [Notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&version=GBaagarg%2Franklm&_a=preview&anchor=getting-started) to submit AML pipelines.
 
-### Using Aether to submit runs to AML/ITP 
+## Using Aether to submit runs to AML/ITP 
 #### Training
 In Aether, by replacing your ITP training subgraph with only one Deeprank AML ITP training module, you can continue to submit to ITP cluster and/or AML compute
 and get all the added benefits of AML. 
@@ -59,17 +59,11 @@ Current Training Module submitted to ITP
 
 ![](trainingimage1.gif)
 
-
-
-
-
 Benefits:
 *	Improved experiment tracking 
 *	Automated hyperparameter tuning
 *	Increased resource utilization (AML Compute + existing ITP compute)
 *	Replace long commands with configs and overridable params
-
-
 
 #### Inferencing 
 
