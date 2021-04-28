@@ -3,7 +3,7 @@
  
 # Getting Started
 
-- ## Permissions
+## Permissions
  Please ensure you join the "aml-deeprank" Security Group on [idweb](https://idweb/). 
 
 ## Two approaches to submit jobs to AML
@@ -72,6 +72,7 @@ as dictionary values for example {batch_size: 10}.
 * PRS 
 * Hyperparameter optimization
 
+### Hyperparameter optimization
 Hyperparameter tuning, also called hyperparameter optimization, is the process of finding the configuration of hyperparameters that results in the best performance. The process is typically computationally expensive and manual. Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a pipeline sweep job. See [here](https://componentsdk.azurewebsites.net/components/sweep_component.html) for more details on the Sweep component. 
 
 Use the configuration file [sweep.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Faml_pipeline%2Fconfigs%2Fpipeline_params%2Fsweep.json) to edit the parameters and settings for your job. This file outlines how you can do the following tasks.  
