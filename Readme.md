@@ -39,7 +39,7 @@ as dictionary values for example {batch_size: 10}.
 
 Current Training Module submitted to ITP 
 
- ![](image1.png)
+
 
 
 Benefits:
