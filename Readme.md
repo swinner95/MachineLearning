@@ -20,21 +20,17 @@
 
 
 ### Hyperparameter optimization
-Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and
-to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a
-pipeline sweep job. 
+Hyperparameter tuning, also called hyperparameter optimization, is the process of finding the configuration of hyperparameters that results in the best performance. The process is typically computationally expensive and manual.Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a pipeline sweep job. See [here](https://componentsdk.azurewebsites.net/components/sweep_component.html) for more details on the Sweep component. 
 
-**get link to sweep comp doc**
+The [sweep.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Faml_pipeline%2Fconfigs%2Fpipeline_params%2Fsweep.json) file outlines how you can do the following tasks. Use the configuration file to edit the parameters and settings for your job. 
 
-The [sweep.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Faml_pipeline%2Fconfigs%2Fpipeline_params%2Fsweep.json) file outlines how you can:
-
-      * Define the parameter search space. In this example, we are tuning on **batch_size_per_gpu** and **learning_rate**. 
-      * Specify a primary metric to optimize. In this example, we are optimizing the metric **onedcg_3**. 
-      * Specify early termination policy for low-performing runs
-      * Create and assign resources
-      * Launch an experiment with the defined configuration
-      * Visualize the training runs
-      * Select the best configuration for your model
+  * Define the parameter search space. In this example, we are tuning on **batch_size_per_gpu** and **learning_rate**. 
+  * Specify a primary metric to optimize. In this example, we are optimizing the metric **onedcg_3**. 
+  * Specify early termination policy for low-performing runs
+  * Create and assign resources
+  * Launch an experiment with the defined configuration
+  * Visualize the training runs
+  * Select the best configuration for your model
 
 #### Visualize hyperparameter tuning runs
 4. After you submit your training job, you can visualize your hyperparameter tuning runs in the [Azure Machine Learning studio UI](ml.azure.com),
@@ -99,5 +95,5 @@ Sweep issues:
 PRS issues:
 
 # Resources 
-Link to documentation 
+[Sweep Component](https://componentsdk.azurewebsites.net/components/sweep_component.html)
 
