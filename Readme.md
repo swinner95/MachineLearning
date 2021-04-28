@@ -4,7 +4,7 @@
 # Getting Started
 
 - ## Permissions
- Please ensure you join the "aml-deeprank" Security Group on (idweb)[https://idweb/]. 
+ Please ensure you join the "aml-deeprank" Security Group on [idweb](https://idweb/). 
 
 ## Two approaches to submit jobs to AML
 1. Using a Jupyter notebook
