@@ -12,17 +12,16 @@
        - (Skip if you're already a part of aml-ds@microsoft.com or relevance-users@microsoft.com)
 
 ## What different AML scenarios are supported, how to switch between AML and ITP
-### Scope
 
-### Regular training
+## AML Scenerarions Supported for submission on AML and ITP
+- Scope
+* Regular training
+* Distributed training
+* Hyperparameter optimization
 
-### Distributed training
+  Hyperparameter tuning, also called hyperparameter optimization, is the process of finding the configuration of hyperparameters that results in the best performance. The process is typically computationally expensive and manual. Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a pipeline sweep job. See [here](https://componentsdk.azurewebsites.net/components/sweep_component.html) for more details on the Sweep component. 
 
-
-### Hyperparameter optimization
-Hyperparameter tuning, also called hyperparameter optimization, is the process of finding the configuration of hyperparameters that results in the best performance. The process is typically computationally expensive and manual.Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a pipeline sweep job. See [here](https://componentsdk.azurewebsites.net/components/sweep_component.html) for more details on the Sweep component. 
-
-The [sweep.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Faml_pipeline%2Fconfigs%2Fpipeline_params%2Fsweep.json) file outlines how you can do the following tasks. Use the configuration file to edit the parameters and settings for your job. 
+Use the configuration file [sweep.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Faml_pipeline%2Fconfigs%2Fpipeline_params%2Fsweep.json) to edit the parameters and settings for your job. This file outlines how you can do the following tasks.  
 
   * Define the parameter search space. In this example, we are tuning on **batch_size_per_gpu** and **learning_rate**. 
   * Specify a primary metric to optimize. In this example, we are optimizing the metric **onedcg_3**. 
