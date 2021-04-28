@@ -59,7 +59,7 @@ as dictionary values for example {batch_size: 10}.
 
 **Configurable Parallelization**
 - There is also configurable parallelization where you can specify the number of **numNodes** and **numGPUs** which can save 100x graph complexity. 
-![](configue.GIF)
+![](configure.GIF)
 **Benefits:**
 *	Increased resource utilization (AML Compute+existing ITP)
 *	Automatic retries and non-redundant code/modules for batch inferencing
