@@ -11,26 +11,61 @@
      3. Relevance ADLS group [relevance-c09_RWX](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/GroupDetailsMenuBlade/Overview/groupId/eb2a3428-71c0-4751-9194-715007f36d74)
        - (Skip if you're already a part of aml-ds@microsoft.com or relevance-users@microsoft.com)
 
-- ### AML notebook
-   Start exploring deeprank/pagerec.ipynb Jupyter Notebook to submit AML pipelines.
+## What different AML scenarios are supported, how to switch between AML and ITP
+### Scope
+
+### Regular training
+
+### Distributed training
+
+
+### Hyperparam optimization
+
+
+### PRS
+
+### Using the Jupyter notebook to submit runs to AML
+Start exploring deeprank/pagerec.ipynb Jupyter Notebook to submit AML pipelines.
+
+### Using Aether to submit runs to AML/ITP 
+#### Training
+In Aether, by replacing your ITP training subgraph with only one Deeprank AML ITP training module, you can continue to submit to ITP cluster and/or AML compute
+and get all the added benefits of AML. 
+
+Benefits:
+*	Improved experiment tracking 
+*	Automated hyperparameter tuning
+*	Increased resource utilization (AML Compute + existing ITP compute)
+*	Replace long commands with configs and overridable params
+
+* The Deeprank AML ITP module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML.
+* You can edit the **overrideparams** parameter to overwride any parameters instead of editing these parameters in the config file. You can add parameters
+as dictionary values for example {batch_size: 10}. 
+* You can also add run tags in the **tags** parameter.  
+
+
+#### Inferencing 
+
+Benefits:
+*	Increased resource utilization (AML Compute+existing ITP)
+*	Automatic retries and non-redundant code/modules for batch inferencing
+*	AEther graph for inferencing simplified by 100x
+
+# How to do interactive debugging
+[Coming soon]
+# How to view metrics dashboard
+[Coming soon]
 
 # Contacts
- Contact Aashna Garg (aagarg@microsoft.com), Shané Winner (shwinne@microsoft.com) for any questions/feedback.
+Contact Aashna Garg (aagarg@microsoft.com), Shané Winner (shwinne@microsoft.com) for any questions/feedback.
 
+Contacts for respective teams issues with: 
 
+ADLS issues:
+ComponentSDK issues:
+Sweep issues:
+PRS issues:
 
-## What different AML scenarios are supported, how to switch between AML and ITP
-scope
-regular training
-distributed training
-hyperparam optimization
-PRS
-How does notebook work
-How does AEther route work
+# Resources 
+Link to documentation 
 
-Additional items:
-How to do interactive debugging
-How to view metrics dashboard
-Contacts for respective teams for ADLS issues, ComponentSDK issues, sweep issues, PRS issues
-Useful links to docs
-Our contacts
