@@ -77,12 +77,14 @@ or you can use a [notebook widget](https://docs.microsoft.com/en-us/azure/machin
   ![](webxtsweep.gif)
 
 
-# How to do interactive debugging
+# Additional Information
+
+### How to do interactive debugging
 [Coming soon]
-# How to view metrics dashboard
+### How to view metrics dashboard
 [Coming soon]
 
-# Contacts
+### Contacts
 Contact Aashna Garg (aagarg@microsoft.com), Shané Winner (shwinne@microsoft.com) for any questions/feedback.
 
 Contacts for respective teams issues with: 
@@ -92,6 +94,6 @@ ComponentSDK issues:
 Sweep issues:
 PRS issues:
 
-# Resources 
+### Resources 
 [Sweep Component](https://componentsdk.azurewebsites.net/components/sweep_component.html)
 
