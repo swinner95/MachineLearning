@@ -31,7 +31,9 @@ and get all the added benefits of AML.
 
 
 **AML Deeprank Training Module**
-- The Deeprank AML ITP module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML.
+- The Deeprank AML ITP module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML. 
+- In this repository, you can find the configuration template for the **stepConfigFile** in this folder 'deeprank/aml_pipeline/configs/pipeline_params/ranklm_train_itp.json'. 
+- In this repository, you can find the configuration template for the **workspaceConfigFile** in this folder 'deeprank/aml_pipeline/configs/workspace/itp_workspace.json'. 
 - You can edit the **overrideparams** parameter to overwride any parameters instead of editing these parameters in the config file. You can add parameters
 as dictionary values for example {batch_size: 10}. 
 - You can also add run tags in the **tags** parameter.  
@@ -51,6 +53,8 @@ and get all the added benefits of AML.
 
 **AML Deeprank PRS Module**
 - The Deeprank AML PRS module takes only two parameters **stepConfigFile** and the **workspaceConfigFile** which submits to AML.
+- In this repository, you can find the configuration template for the **stepConfigFile** in this folder 'deeprank/aml_pipeline/configs/pipeline_params/ranklm_inference-prs.json'. 
+- In this repository, you can find the configuration template for the **workspaceConfigFile** in this folder 'deeprank/aml_pipeline/configs/workspace/aml_workspace.json'.
 - You can edit the **overrideparams** parameter to overwride any parameters instead of editing these parameters in the config file. You can add parameters
 as dictionary values for example {batch_size: 10}. 
 - You can also add run tags in the **tags** parameter.  
