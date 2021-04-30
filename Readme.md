@@ -11,51 +11,45 @@
 * Regular training
 * Distributed training
 * PRS 
-* Hyperparameter optimization
+* Hyperparameter optimization (sweep)
 
 ## Three approaches to submit jobs to AML
 
 ### 1. Run AML Pipeline From DevBox (CLI)
 For information on the installation and job submission please see [here](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2FREADME.md&version=GBmaster&_a=preview&anchor=run-aml-pipeline-from-devbox-(work-in-progress))
-
   
 ### 2. Jupyter Notebook 
 Steps: 
 
-1. Setup compute instance - 
-2. Open Jupyter Lab
-3. Create a new notebook or git clone the deeprank repo 
-4. Run the notebook **aml-deeprank.ipynb**
+1. [Setup compute instance and open a Jupyter notebook](https://docs.microsoft.com/azure/machine-learning/concept-compute-instance#create) 
+2. Run the notebook **aml-deeprank.ipynb**
 
-
+## Deeprank Supported Models
 1. All the deeprank supported models can be found in the [deeprank/configs folder](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fconfigs&version=GBmaster)
 2. For every model deeprank supports, there is a separate json file for each type of job submission (regular training, distributed training, sweep or PRS job) in the **aml** folder for that model.  eg. [deepranl/configs/meb/qr_embedding_bag_nested/aml/regular_job_adls_mount.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fconfigs%2Fmeb%2Fqr_embedding_nested%2Faml%2Fdistributed_job_adls_direct.json&version=GBmaster)
 3. You will need to customize the json file and make changes to the input paths, output paths and/or user command. This json is used to submit a [regular training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fregular_job%2Fcuda10.1&version=GBmaster), [distributed training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fdistributed_job%2Fcuda10.1&version=GBmaster), [inferencing job (PRS)](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Finference_job&version=GBmaster), sweep or scope jobs to AML.  Ensure to reference the input paths in the **user_command**.
 
 Parameter definitions in JSON configuration file:
 
-1. module
-2. inputs
-3. outputs
-4. user_command
+1. **module** - In the module section, specify the type of job you will like to run (training, distributed, PRS etc.).
+2. **inputs** - Input paths are a combination of datastore and paths
+3. **outputs** - The output is where the model will get uploaded. 
+4. **user_command** - This is where you can run your exisitng deeprank command and specify the input and output paths.
 
-Run settings:
-1. target
-2. resource_layout
-    instance_count
-    instance_type
-    process_count_per_node
+[Run settings](https://docs.microsoft.com/en-us/python/api/azureml-contrib-pipeline-steps/azureml.contrib.pipeline.steps.parallelrunconfig?view=azure-ml-py):
+1. **target** - A designated compute resource or environment where you run your training script or host your service deployment. 
+3. **instance_count**
+4. **instance_type** - Virtual Machine sizes or SKUs 
+5. **process_count_per_node** - Number of processes executed on each node. (optional, default value is number of cores on node.)
 
-* Inferencing job 
-
-   "parallel": {
-      "node_count": 8,
-      "error_threshold": 10,
-      "mini_batch_size": "52428800",
-      "logging_level": "DEBUG",
-      "run_max_try": 1,
-      "run_invocation_timeout": 57600
-    }
+### Inferencing run settings (PRS):  
+1. **node_count** - Number of nodes in the compute target used for running the ParallelRunStep.
+2. **error_threshold** - The number of record failures for TabularDataset and file failures for FileDataset that should be ignored during processing. If the error count goes above this value, then the job will be aborted. Error threshold is for the entire input and not for individual mini-batches sent to run() method. The range is [-1, int.max]. -1 indicates ignore all failures during processing.
+3. **mini_batch_size** - A hyperparameter that defines the number of samples to work through before updating the internal model parameters.
+4. **logging_level** - A string of the logging level name, which is defined in 'logging'. Possible values are 'WARNING', 'INFO', and 'DEBUG'. (optional, default value is 'INFO'.)
+5. **run_max_try** - Number of times to restart the run when it is failed or stopped
+6. **run_invocation_timeout** - Timeout in seconds for each invocation of the run() method. (optional, default value is 60.)
+ 
     
 * Regular Training Job
 * Distributed job
