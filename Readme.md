@@ -32,6 +32,35 @@ Steps:
 2. For every model deeprank supports, there is a separate json file for each type of job submission (regular training, distributed training, sweep or PRS job) in the **aml** folder for that model.  eg. [deepranl/configs/meb/qr_embedding_bag_nested/aml/regular_job_adls_mount.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fconfigs%2Fmeb%2Fqr_embedding_nested%2Faml%2Fdistributed_job_adls_direct.json&version=GBmaster)
 3. You will need to customize the json file and make changes to the input paths, output paths and/or user command. This json is used to submit a [regular training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fregular_job%2Fcuda10.1&version=GBmaster), [distributed training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fdistributed_job%2Fcuda10.1&version=GBmaster), [inferencing job (PRS)](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Finference_job&version=GBmaster), sweep or scope jobs to AML.  Ensure to reference the input paths in the **user_command**.
 
+Parameter definitions in JSON configuration file:
+
+1. module
+2. inputs
+3. outputs
+4. user_command
+
+Run settings:
+1. target
+2. resource_layout
+    instance_count
+    instance_type
+    process_count_per_node
+
+* Inferencing job 
+
+   "parallel": {
+      "node_count": 8,
+      "error_threshold": 10,
+      "mini_batch_size": "52428800",
+      "logging_level": "DEBUG",
+      "run_max_try": 1,
+      "run_invocation_timeout": 57600
+    }
+    
+* Regular Training Job
+* Distributed job
+* Sweep Job 
+
 ### 3. Aether Path (Work in Progress) 
 There will be a new Aether module that you can use to specify your input and output paths simarly to what was done in approach #2. The AML module will have a command parameter and 10 input paths as parameters so that you can reference the input paths in the command. 
 
