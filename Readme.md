@@ -38,7 +38,7 @@ Parameter definitions in JSON configuration file:
 
 [Run settings](https://docs.microsoft.com/en-us/python/api/azureml-contrib-pipeline-steps/azureml.contrib.pipeline.steps.parallelrunconfig?view=azure-ml-py):
 1. **target** - A designated compute resource or environment where you run your training script or host your service deployment. 
-3. **instance_count**
+3. **instance_count** - GPU count
 4. **instance_type** - Virtual Machine sizes or SKUs 
 5. **process_count_per_node** - Number of processes executed on each node. (optional, default value is number of cores on node.)
 
