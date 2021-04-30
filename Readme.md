@@ -5,11 +5,37 @@
 
 ## Permissions
  Please ensure you join the "aml-deeprank" Security Group on [idweb](https://idweb/). 
+ 
+ ## AML Scenarios Supported 
+* Scope
+* Regular training
+* Distributed training
+* PRS 
+* Hyperparameter optimization
 
-## Two approaches to submit jobs to AML
-1. Using a Jupyter notebook
-2. Using Aether module
+## Three approaches to submit jobs to AML
 
+### 1. Run AML Pipeline From DevBox (CLI)
+For information on the installation and job submission please see [here](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2FREADME.md&version=GBmaster&_a=preview&anchor=run-aml-pipeline-from-devbox-(work-in-progress))
+
+  
+### 2. Jupyter Notebook 
+Steps: 
+
+1. Setup compute instance - 
+2. Open Jupyter Lab
+3. Create a new notebook or git clone the deeprank repo 
+4. Run the notebook **aml-deeprank.ipynb**
+
+
+1. All the deeprank supported models can be found in the [deeprank/configs folder](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fconfigs&version=GBmaster)
+2. For every model deeprank supports, there is a separate json file for each type of job submission (regular training, distributed training, sweep or PRS job) in the **aml** folder for that model.  eg. [deepranl/configs/meb/qr_embedding_bag_nested/aml/regular_job_adls_mount.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fconfigs%2Fmeb%2Fqr_embedding_nested%2Faml%2Fdistributed_job_adls_direct.json&version=GBmaster)
+3. You will need to customize the json file and make changes to the input paths, output paths and/or user command. This json is used to submit a [regular training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fregular_job%2Fcuda10.1&version=GBmaster), [distributed training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fdistributed_job%2Fcuda10.1&version=GBmaster), [inferencing job (PRS)](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Finference_job&version=GBmaster), sweep or scope jobs to AML.  Ensure to reference the input paths in the **user_command**.
+
+### 3. Aether Path (Work in Progress) 
+There will be a new Aether module that you can use to specify your input and output paths simarly to what was done in approach #2. The AML module will have a command parameter and 10 input paths as parameters so that you can reference the input paths in the command. 
+
+[Aashna to provide screenshot] 
 
 ### Using the Jupyter notebook to submit runs to AML
 Start exploring this [Notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&version=GBaagarg%2Franklm&_a=preview&anchor=getting-started) to submit AML pipelines.
@@ -64,13 +90,7 @@ as dictionary values for example {batch_size: 10}.
 *	Aether graph for inferencing simplified by 100x
 
 
-## AML Scenarios Supported 
 
-* Scope
-* Regular training
-* Distributed training
-* PRS 
-* Hyperparameter optimization
 
 ### Hyperparameter optimization
 Hyperparameter tuning, also called hyperparameter optimization, is the process of finding the configuration of hyperparameters that results in the best performance. The process is typically computationally expensive and manual. Use this [notebook](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fpagerec.ipynb&_a=preview) to walkthrough how to set up your resources and to learn how to submit an AML Pipeline using the sweep component. The **Hyperparameter Optimization** section of the notebook covers how to configure and submit a pipeline sweep job. See [here](https://componentsdk.azurewebsites.net/components/sweep_component.html) for more details on the Sweep component. 
