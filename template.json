@@ -1,0 +1,42 @@
+{
+  #In the module section, specify the type of job you will like to run (training, distributed, PRS etc.). In the example below, we are submitting an inferencing job. 
+  "module": "inference_job/cuda10.1",
+  #Input paths are a combination of datastore and paths
+  "inputs": {
+    "input_path_0": {
+      "datastore": "adls_relevance09",
+      "path": "/local/users/deeprank/fixtures/data/malta/malbetter/supervise/test_data"
+    },
+    "input_path_1": {
+      "datastore": "adls_relevance09",
+      "path": "/local/users/deeprank/fixtures/data/malta/malbetter/supervise/model/base"
+    },
+    "input_path_2": {
+      "datastore": "adls_relevance09",
+      "path": "/local/users/deeprank/fixtures/data/malta/malbetter/supervise/model/checkpoint"
+    }
+  },
+# The output is where the model will get uploaded. 
+  "outputs": {
+    "output_path": {
+      "datastore": "adls_relevance09",
+      "path": "/local/users/deeprank/experiments/malta/malbetter/supervise/{run-id}"
+    }
+  },
+  "header": true,
+# User_command is where you can run your exisitng deeprank command and specify the input and output paths. 
+  "user_command": "python run_deeprank.py configs/malta/malbetter/supervise.json --output_path $output_path --base_model_name_or_path $input_path_1 --base_model_output_size 1024 --batch_size_per_gpu 1024 --test_data_path $input_path_0 --running_mode deepspeed --checkpoint_path $input_path_2 --mlflow True",
+  "runsettings-Azure-EastUS-P40-2": {
+    "target": "itp-p40-eus",
+    "resource_layout": { "instance_type": "Standard_ND24rs_1GPU" },
+    "parallel": {
+      "node_count": 8,
+      "error_threshold": 10,
+      "mini_batch_size": "52428800",
+      "logging_level": "DEBUG",
+      "run_max_try": 1,
+      "run_invocation_timeout": 57600
+    }
+  },
+  "runsettings": { "$ref": "#/runsettings-Azure-EastUS-P40-2" }
+}
