@@ -27,14 +27,16 @@ Steps:
 ## Deeprank Supported Models
 1. All the deeprank supported models can be found in the [deeprank/configs folder](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fconfigs&version=GBmaster)
 2. For every model deeprank supports, there is a separate json file for each type of job submission (regular training, distributed training, sweep or PRS job) in the **aml** folder for that model.  eg. [deepranl/configs/meb/qr_embedding_bag_nested/aml/regular_job_adls_mount.json](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fconfigs%2Fmeb%2Fqr_embedding_nested%2Faml%2Fdistributed_job_adls_direct.json&version=GBmaster)
-3. You will need to customize the json file and make changes to the input paths, output paths and/or user command. This json is used to submit a [regular training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fregular_job%2Fcuda10.1&version=GBmaster), [distributed training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fdistributed_job%2Fcuda10.1&version=GBmaster), [inferencing job (PRS)](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Finference_job&version=GBmaster), sweep or scope jobs to AML.  Ensure to reference the input paths in the **user_command**.
+3. You will need to customize the json file and make changes to the input paths, output paths and/or user command. This json is used to submit a [regular training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fregular_job%2Fcuda10.1&version=GBmaster), [distributed training job](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Fdistributed_job%2Fcuda10.1&version=GBmaster), [inferencing job (PRS)](https://msasg.visualstudio.com/Bing_and_IPG/_git/deeprank?path=%2Fdeeprank%2Fcomponents%2Finference_job&version=GBmaster), sweep or scope jobs to AML.  
 
 Parameter definitions in JSON configuration file:
 
 1. **module** - In the module section, specify the type of job you will like to run (training, distributed, PRS etc.).
-2. **inputs** - Input paths are a combination of datastore and paths
-3. **outputs** - The output is where the model will get uploaded. 
-4. **user_command** - This is where you can run your exisitng deeprank command and specify the input and output paths.
+2. **inputs** - Input paths are a combination of datastore and paths (directory). 
+3. **datastore** - Datastores are attached to workspaces and are used to store connection information to Azure storage services so you can refer to them by name and don't need to remember the connection information and secret used to connect to the storage services.
+4. **outputs** - The output is where all the outputs of the run will get uploaded. 
+5. **user_command** - This is where you can run the deeprank command. Ensure to reference the input paths and output path that you specified in the json file 
+6. reference any python script arguments here.  
 
 [Run settings](https://docs.microsoft.com/en-us/python/api/azureml-contrib-pipeline-steps/azureml.contrib.pipeline.steps.parallelrunconfig?view=azure-ml-py):
 1. **target** - A designated compute resource or environment where you run your training script or host your service deployment. 
